@@ -1,0 +1,19 @@
+python D:\python_projects\drest\venv\Lib\site-packages\django\bin\django-admin.py startproject dapi .
+python D:\python_projects\drest\venv\Lib\site-packages\django\bin\django-admin.py startapp api
+python D:\python_projects\drest\manage.py migrate
+python D:\python_projects\drest\manage.py createsuperuser
+
+python D:\python_projects\drest\manage.py shell
+from django.contrib.auth.models import User
+user=User.objects.create_user('foo', password='bar')
+user.is_superuser=True
+user.is_staff=True
+user.save()
+
+python D:\python_projects\drest\manage.py runserver
+D:\curl-7.75.0-win64-mingw\bin\curl.exe -H 'Accept: application/json; indent=4' -u nso:1Qazxsw2 http://127.0.0.1:8000/users/
+
+
+python D:\python_projects\drest\venv\Lib\site-packages\django\bin\django-admin.py startapp snippets
+python D:\python_projects\drest\manage.py makemigrations snippets
+python D:\python_projects\drest\manage.py migrate
